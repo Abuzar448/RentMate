@@ -26,7 +26,7 @@ const validateListing = (req, res, next) => {
 
 router.route('/')
 .get(listingController.index)
-.post(validateListing,isloggedIn,upload.single('listing[image][url]'),listingController.createListing)
+.post(isloggedIn,upload.single('listing[image][url]'),listingController.createListing);
 
 
 // show route , update route , delete route .

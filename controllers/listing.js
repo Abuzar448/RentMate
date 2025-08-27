@@ -52,6 +52,9 @@ module.exports.createListing = async (req, res) => {
       format: "json",
       limit: 1,
     },
+    headers: {
+      "User-Agent": "RentMateApp/1.0 (your-email@example.com)",
+    },
   });
 
   try {

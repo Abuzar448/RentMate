@@ -1,0 +1,176 @@
+body{
+  font-family: 'Plus Jakarta Sans', Sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container{
+  flex:1;
+}
+.navbar{
+  height: 5rem;
+  background-color: white;
+}
+
+.navbar a{
+  font-size:18px;
+}
+.fa-compass{
+  color: #fe424d;
+  font-size: 2rem;
+}
+.nav-link{
+  color: #222222 !important;
+  margin-right:15px !important;
+}
+
+.footer{
+  height: 120px;
+}
+.footer a i{
+  font-size:18px;
+}
+.footer a{
+  font-size:18px;
+}
+
+.icon{
+  font-size: 1.2rem;
+  color: black;
+  margin-top:0.5rem;
+}
+.privacy-policy{
+  text-decoration: none;
+  color: #222222;
+}
+.privacy-policy:hover{
+  text-decoration:underline;
+}
+
+.index-Heading{
+  margin:20px 0;
+}
+
+.card{
+  border: none !important;
+  margin-bottom:0.5rem;
+}
+.card-img-top{
+  /* border-radius: 1rem !important; */
+  object-fit: cover !important;
+}
+.mainCard:hover{
+  scale:1.02 !important;
+}
+
+.card-body{
+  padding: 0 !important;
+  margin:0 !important;
+}
+.card-text{
+  font-weight: 400 !important;
+}
+.listing-links{
+  text-decoration: none;
+}
+
+.card-img-overlay{
+  opacity:0;
+}
+.card-img-overlay:hover{
+  opacity:0.2;
+  background-color: white;
+}
+
+.btn{
+
+  border: none;
+}
+.delbtn{
+  background:#000000 !important;
+  color: #fff !important;
+  border: none;
+}
+
+.editdelbtn{
+  display: flex;
+  gap: 10px;
+}
+.editdelbtn .editbtn{
+  background-color: #fe424d !important;
+  color: white !important;
+  width: 120px;
+}
+.editbtn{
+  background-color: #fe424d !important;
+  color: white !important;
+  width: 120px;
+}
+.editdelbtn .btn{
+  width: 120px;
+}
+.sbmtbtn:hover{
+  background-color: green !important;
+}
+
+.loginBtn,.signUpBtn{
+  background-color: #fe424d !important;
+  border: none !important;
+}
+
+
+.backContainer{
+  position: relative;
+}
+
+.backContainer .back-btn{
+  border-radius: 50% !important;
+  height: 3rem;
+  width: 3rem;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: absolute;
+  top:1rem;
+  left: 1rem;
+}
+
+/* Collapse background fix */
+.navbar-collapse {
+  background: white;  /* ya koi color jo tum chaho */
+  padding: 10px;
+}
+
+/* Mobile screen me links ko full-width dikhana */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;   /* navbar ke just neeche */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-top: 1px solid #ddd;
+    background: #f8f9fa; /* bg color dikhane ke liye */
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 15px;
+  }
+}
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: rgb(255, 0, 0);
+  transition: 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}

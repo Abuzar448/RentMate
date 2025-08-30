@@ -35,7 +35,7 @@ module.exports.showListing = async (req, res) => {
     .populate("owner");
   if (!list) {
     req.flash("error", "Listing You requested does not exist !");
-    res.redirect("/listings");
+    return res.redirect("/listings");
   }
 
   res.render("listings/show", { list, currentUrl: req.originalUrl });
@@ -53,10 +53,10 @@ module.exports.createListing = async (req, res) => {
       limit: 1,
     },
     headers: {
-      "User-Agent": "RentMateApp/1.0 (your-email@example.com)",
+      "User-Agent": "RentMateApp/1.0 (aburaja2654@gmail.com)",
     },
   });
-
+  let lat = null, lng = null;
   try {
     if (geoRes.data && geoRes.data.length > 0) {
       lat = geoRes.data[0].lat;
@@ -82,7 +82,7 @@ module.exports.editListing = async (req, res) => {
   const list = await listing.findById(id);
   if (!list) {
     req.flash("error", "Listing You requested does not exist !");
-    res.redirect("/listings");
+    return res.redirect("/listings");
   }
   let originalImage = list.image.url;
   originalImage.replace("/uploads", "/upload/h_300,w_250");

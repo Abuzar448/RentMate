@@ -44,7 +44,7 @@ const store = MongoStore.create({
   },
   touchAfter: 24 * 3600,
 });
-store.on("error",()=>{
+store.on("error",(err)=>{
   console.log("Error in Mongo Session store ",err);
 })
 
@@ -89,7 +89,7 @@ app.use("/listings", listings);
 app.use("/listings", reviews);
 app.use(UserRouter);
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Server is running to port ${port}`);
 });
